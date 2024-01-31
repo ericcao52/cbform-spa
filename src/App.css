@@ -1,11 +1,6 @@
-html {
-  height: 100dvh;
-  background-color: red;
-}
-
 body {
-  background-color: #f2f4f8;
-  place-items: unset;
+  background: #f2f4f8 !important;
+  /* place-items: unset; */
 }
 
 #root {
