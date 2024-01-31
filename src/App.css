@@ -1,0 +1,20 @@
+html {
+  height: 100dvh;
+  background-color: red;
+}
+
+body {
+  background-color: #f2f4f8;
+  place-items: unset;
+}
+
+#root {
+  margin: auto;
+}
+
+.banner-gradient {
+  background: linear-gradient(249.91deg,
+      #fff8f4 0%,
+      #def1ff 48.96%,
+      #fff8f4 100%)
+}
