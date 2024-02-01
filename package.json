@@ -19,9 +19,11 @@
     "framer-motion": "^11.0.3",
     "intl-tel-input": "^19.2.16",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.21.3"
   },
   "devDependencies": {
+    "@types/intl-tel-input": "^18.1.4",
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
     "@typescript-eslint/eslint-plugin": "^6.14.0",
