@@ -2,9 +2,6 @@ import { Box, Image } from "@cauri/ui";
 import { FC } from "react";
 import { FormTypes } from "./FormContainer";
 import clsx from "clsx";
-import LydiaLogo from "../assets/logo_app_large.png";
-import MastercardLogo from "../assets/mastercard.png";
-import VisaLogo from "../assets/visa.png";
 
 type Props = {
   selectedForm: string;
@@ -39,7 +36,7 @@ export const FormSelector: FC<Props> = ({ selectedForm, setSelectedForm }) => {
           fontWeight={700}
           color={selectedForm === FormTypes.LYDIA ? "#000000" : "#697284"}
         >
-          <Image src={LydiaLogo} w={6} />
+          <Image src={"/assets/logo_app_large.png"} alt="Lydia Logo" w={6} />
           Lydia
         </Box>
       </Box>
@@ -67,8 +64,8 @@ export const FormSelector: FC<Props> = ({ selectedForm, setSelectedForm }) => {
           fontFamily={"ProximaNova-Bold"}
         >
           Carte
-          <Image src={VisaLogo} w={6} />
-          <Image src={MastercardLogo} w={6} />
+          <Image src={"/assets/visa.png"} alt="Visa Logo" w={6} />
+          <Image src={"/assets/mastercard.png"} alt="Mastercard Logo" w={6} />
         </Box>
       </Box>
     </Box>

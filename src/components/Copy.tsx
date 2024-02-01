@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { Box, Image } from "@cauri/ui";
-import CheckCircleBlue from "../assets/check_circle_blue.svg";
-import CombinedShape from "../assets/combined-shape.svg";
 
 type Props = {
   value: string;
@@ -10,7 +8,9 @@ type Props = {
 let copyTimeout: NodeJS.Timeout | null = null;
 export const Copy: React.FC<Props> = () => {
   const [copied, setCopied] = useState<boolean>(false);
-  const image = copied ? CheckCircleBlue : CombinedShape;
+  const image = copied
+    ? "/assets/check_circle_blue.svg"
+    : "/assets/combined-shape.svg";
 
   const onClickCopy = () => {
     if (copyTimeout) {
@@ -25,7 +25,7 @@ export const Copy: React.FC<Props> = () => {
 
   return (
     <Box onClick={onClickCopy}>
-      <Image src={image} width={5} />
+      <Image src={image} alt="copy" width={5} />
     </Box>
   );
 };

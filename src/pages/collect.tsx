@@ -1,19 +1,19 @@
 // import { ChakraProvider, Box } from "@chakra-ui/react";
 import {
-    Box,
-    Button,
-    Card,
-    Container,
-    FormControl,
-    FormErrorMessage,
-    FormLabel,
-    Input,
-    Link,
-    Text
+  Box,
+  Button,
+  Card,
+  Container,
+  FormControl,
+  FormErrorMessage,
+  FormLabel,
+  Image,
+  Input,
+  Link,
+  Text,
 } from "@cauri/ui";
-import "./App.css";
 
-function App() {
+export default function Collect() {
   return (
     <Container
       display={"flex"}
@@ -125,13 +125,13 @@ function App() {
         boxShadow={"1px 1px 2px #D3D3D3"}
       >
         <Box maxW={336} width={"100%"}>
-          <img src="/Logo_CB_Lydia.png" alt="Logo CB Lydia" />
+          <Image src="/assets/logo_cb_lydia.png" alt="Logo CB Lydia" />
           <Text
             fontSize={"12px"}
             py={2}
             pl={9}
             mt={2}
-            bgImage={"/secure.png"}
+            bgImage={"/assets/secure.png"}
             bgSize={"39px 29px"}
             bgPosition={"0 center"}
             bgRepeat={"no-repeat"}
@@ -150,12 +150,15 @@ function App() {
               Les informations de paiement sont traitées par Payline (leader du
               paiement sur Internet). Cette page est conçue par Lydia.
             </Text>
-            <Text
-              fontSize={"14px"}
-              textAlign={"center"}
-              lineHeight={"18px"}
-            >
-              Contact : <Link color={"#0000EE"} textDecoration={"underline"} href="mailto:support@lydia-app.com">support@lydia-app.com</Link>
+            <Text fontSize={"14px"} textAlign={"center"} lineHeight={"18px"}>
+              Contact :{" "}
+              <Link
+                color={"#0000EE"}
+                textDecoration={"underline"}
+                href="mailto:support@lydia-app.com"
+              >
+                support@lydia-app.com
+              </Link>
             </Text>
           </Box>
         </Box>
@@ -163,5 +166,3 @@ function App() {
     </Container>
   );
 }
-
-export default App;

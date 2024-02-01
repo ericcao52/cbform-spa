@@ -1,17 +1,11 @@
-// import { ChakraProvider, Box } from "@chakra-ui/react";
-import {
-  Container,
-  Box,
-} from "@cauri/ui";
-import "./App.css";
-import { Banner } from "./components/Banner";
-import { Header } from "./components/Header";
-import { FormContainer } from "./components/FormContainer";
-import { ShareCollect } from "./components/ShareCollect";
-import { Footer } from "./components/Footer";
-import Bg from "./assets/bg_collect.webp";
+import { Container, Box } from "@cauri/ui";
+import { Banner } from "@/components/Banner";
+import { Header } from "@/components/Header";
+import { FormContainer } from "@/components/FormContainer";
+import { ShareCollect } from "@/components/ShareCollect";
+import { Footer } from "@/components/Footer";
 
-function App() {
+export default function Pots() {
   return (
     <Container
       display={"flex"}
@@ -23,7 +17,7 @@ function App() {
       pr={0}
       pt={20}
       maxW={"unset"}
-      backgroundImage={Bg}
+      backgroundImage={"/assets/bg_collect.webp"}
       backgroundSize={"15%"}
     >
       <Banner />
@@ -43,5 +37,3 @@ function App() {
     </Container>
   );
 }
-
-export default App;

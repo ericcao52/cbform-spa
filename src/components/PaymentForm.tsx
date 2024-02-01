@@ -7,10 +7,11 @@ import {
   Button,
   Text
 } from "@cauri/ui";
-// @ts-expect-error no declaration file
-import IntlTelInput from "intl-tel-input/react/build/IntlTelInput.esm"
-import "intl-tel-input/build/css/intlTelInput.min.css";
 import { FormTypes } from "./FormContainer";
+import dynamic from "next/dynamic";
+// @ts-expect-error no declaration file
+const IntlTelInput = dynamic(() => import("intl-tel-input/react/build/IntlTelInput.esm"), { ssr: false });
+import "intl-tel-input/build/css/intlTelInput.min.css";
 
 type Props = {
   selectedForm: FormTypes;
@@ -67,7 +68,7 @@ export const PaymentForm: React.FC<Props> = ({ selectedForm }) => {
           onChangeErrorCode={() => null}
           // any initialisation options from the readme will work here
           initOptions={{
-            utilsScript: "/intlTelInput.js",
+            utilsScript: "/utils/intlTelInput.js",
             customPlaceholder: () => "06...",
             initialCountry: "fr",
             countrySearch: false,

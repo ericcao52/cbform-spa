@@ -1,3 +1,70 @@
+@font-face {
+  font-family: "ProximaNova-Bold";
+  src: "ProximaNova-Bold",
+    url("/fonts/ProximaNova-Bold.ttf") format("truetype");
+}
+@font-face {
+    font-family: "ProximaNova-Light";
+    src: "ProximaNova-light",
+      url("/fonts/ProximaNova-Light.ttf") format("truetype");
+}
+@font-face {
+    font-family: "ProximaNova-Regular";
+    src: "ProximaNova-Regular",
+      url("/fonts/ProximaNova-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: "ProximaNova-Semibold";
+    src: "ProximaNova-Semibold",
+      url("/fonts/ProximaNova-Semibold.ttf") format("truetype");
+}
+@font-face {
+    font-family: "ProximaNova-Thin";
+    src: "ProximaNova-Thin",
+      url("/fonts/ProximaNova-Thin.ttf") format("truetype");
+}
+@font-face {
+  font-family: Degular;
+  font-style: normal;
+  src: url('/fonts/Degular-Bold.woff') format('woff');
+  font-weight: 600;
+}
+
+:root {
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
 body {
   display: flex;
   justify-content: center;
