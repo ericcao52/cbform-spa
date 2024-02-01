@@ -11,9 +11,7 @@ export const Banner: React.FC<Props> = () => {
       width={792}
       borderRadius={10}
       border={"8px solid rgba(255, 255, 255, 0.8)"}
-      marginBottom={-40}
-    >
-      toto
-    </Box>
+      marginBottom={-20}
+    ></Box>
   );
 };

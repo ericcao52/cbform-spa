@@ -3,23 +3,29 @@ import { FormSelector } from "./FormSelector";
 import { PaymentForm } from "./PaymentForm";
 import { FC, useState } from "react";
 
-type FormTypes = "Lydia" | "Card";
+export enum FormTypes {
+  LYDIA = "Lydia",
+  CARD = "Card",
+}
+
 export const FormContainer: FC = () => {
-  const [selectedForm, setSelectedForm] = useState<FormTypes>("Lydia");
+  const [selectedForm, setSelectedForm] = useState<FormTypes>(FormTypes.LYDIA);
   return (
     <Box
-      padding={10}
+      padding={14}
       borderRadius={12}
-      border={"8px solid rgba(255, 255, 255, 0.8)"}
       bgColor={"white"}
       display={"flex"}
       flexDir={"column"}
     >
-      <Text fontWeight={"bold"} fontSize={18}>
+      <Text fontWeight={"bold"} fontSize={18} mb={7}>
         Je participe avec
       </Text>
-      <FormSelector selectedForm={selectedForm} setSelectedForm={setSelectedForm} />
-      <PaymentForm />
+      <FormSelector
+        selectedForm={selectedForm}
+        setSelectedForm={setSelectedForm}
+      />
+      <PaymentForm selectedForm={selectedForm} />
     </Box>
   );
 };

@@ -1,26 +1,76 @@
-import { Box } from "@cauri/ui";
-import { FC, SetStateAction } from "react";
+import { Box, Image } from "@cauri/ui";
+import { FC } from "react";
+import { FormTypes } from "./FormContainer";
+import clsx from "clsx";
+import LydiaLogo from "../assets/logo_app_large.png";
+import MastercardLogo from "../assets/mastercard.png";
+import VisaLogo from "../assets/visa.png";
 
 type Props = {
   selectedForm: string;
-  setSelectedForm: SetStateAction<any>;
+  //  setSelectedForm: SetStateAction<FormTypes>;
+  setSelectedForm: React.Dispatch<React.SetStateAction<FormTypes>>;
 };
 
-export const FormSelector: FC<Props> = ({selectedForm, setSelectedForm}) => {
+export const FormSelector: FC<Props> = ({ selectedForm, setSelectedForm }) => {
   return (
-    <>
+    <Box display={"flex"} mb={-1}>
       <Box
-        onClick={() => setSelectedForm("Lydia")}
-        bgColor={selectedForm === "Lydia" ? "primary" : "white"}
+        className={clsx(
+          "lydia-box",
+          selectedForm === FormTypes.LYDIA && "active"
+        )}
+        onClick={() => setSelectedForm(FormTypes.LYDIA)}
+        bgColor={selectedForm === FormTypes.LYDIA ? "#E9F5FD" : "white"}
+        flex={"50%"}
+        display={"flex"}
+        justifyContent={"center"}
+        alignItems={"center"}
+        cursor={"pointer"}
+        p={5}
       >
-        Lydia
+        <Box
+          display={"flex"}
+          alignItems={"center"}
+          gap={2}
+          position={"relative"}
+          bottom={selectedForm === FormTypes.LYDIA ? 0 : "-2px"}
+          fontFamily={"ProximaNova-Bold"}
+          fontWeight={700}
+          color={selectedForm === FormTypes.LYDIA ? "#000000" : "#697284"}
+        >
+          <Image src={LydiaLogo} w={6} />
+          Lydia
+        </Box>
       </Box>
       <Box
-        onClick={() => setSelectedForm("Card")}
-        bgColor={selectedForm === "Lydia" ? "primary" : "white"}
+        flex={"50%"}
+        className={clsx(
+          "card-box",
+          selectedForm === FormTypes.CARD && "active"
+        )}
+        onClick={() => setSelectedForm(FormTypes.CARD)}
+        bgColor={selectedForm === FormTypes.CARD ? "#E9F5FD" : "white"}
+        display={"flex"}
+        justifyContent={"center"}
+        alignItems={"center"}
+        cursor={"pointer"}
+        p={5}
       >
-        Card
+        <Box
+          display={"flex"}
+          alignItems={"center"}
+          gap={2}
+          position={"relative"}
+          bottom={selectedForm === FormTypes.CARD ? "2px" : 0}
+          color={selectedForm === FormTypes.CARD ? "#000000" : "#697284"}
+          fontFamily={"ProximaNova-Bold"}
+        >
+          Carte
+          <Image src={VisaLogo} w={6} />
+          <Image src={MastercardLogo} w={6} />
+        </Box>
       </Box>
-    </>
+    </Box>
   );
 };
