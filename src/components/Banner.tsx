@@ -8,7 +8,8 @@ export const Banner: React.FC<Props> = () => {
     <Box
       className="banner-gradient"
       height={380}
-      width={792}
+      maxWidth={792}
+      width={"100%"}
       borderRadius={10}
       border={"8px solid rgba(255, 255, 255, 0.8)"}
       marginBottom={-20}
