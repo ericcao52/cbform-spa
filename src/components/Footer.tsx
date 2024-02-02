@@ -1,4 +1,6 @@
-import { Box, Button, Link, Text } from "@cauri/ui";
+import { Box, Button, Text } from "@cauri/ui";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import { FC, useState } from "react";
 
 export enum FormTypes {
@@ -8,6 +10,7 @@ export enum FormTypes {
 
 export const Footer: FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
   return (
     <Box
       display={"flex"}
@@ -92,7 +95,7 @@ export const Footer: FC = () => {
           mt={10}
         >
           <Box className="current-row">
-            <Text>Français</Text>
+            <Text>{router.locale === "fr" ? "Français" : "English"}</Text>
             <Box
               display={"inline-block"}
               height={1.5}
@@ -109,9 +112,15 @@ export const Footer: FC = () => {
             transition={"grid-template-rows 100ms ease-out"}
           >
             <Box overflow={"hidden"} display={"flex"} flexDirection={"column"}>
-              <Link href="/pots'" display={"inline-block"} mt={1}>
-                English
-              </Link>
+              {router.locales
+                ?.filter((locale) => router.locale !== locale)
+                .map((locale) => {
+                  return (
+                    <Link href={router.asPath} locale={locale} key={locale}>
+                      {locale === "fr" ? "Français" : "English"}
+                    </Link>
+                  );
+                })}
             </Box>
           </Box>
         </Box>

@@ -19,6 +19,7 @@ export default function Pots() {
       maxW={"unset"}
       backgroundImage={"/assets/bg_collect.webp"}
       backgroundSize={"15%"}
+      className="bg-lydia"
     >
       <Banner />
       <Box
