@@ -10,7 +10,7 @@ import {
 import { FormTypes } from "./FormContainer";
 import dynamic from "next/dynamic";
 // @ts-expect-error no declaration file
-const IntlTelInput = dynamic(() => import("intl-tel-input/react/build/IntlTelInput.esm"), { ssr: false });
+const IntlTelInput: ReactElement = dynamic(() => import("intl-tel-input/react/build/IntlTelInput.esm"), { ssr: false });
 import "intl-tel-input/build/css/intlTelInput.min.css";
 
 type Props = {
@@ -60,9 +60,6 @@ export const PaymentForm: React.FC<Props> = ({ selectedForm }) => {
           Votre numéro de mobile
         </FormLabel>
         <IntlTelInput
-          flexGrow={1}
-          padding={5}
-          width="100%"
           onChangeNumber={() => null}
           onChangeValidity={() => null}
           onChangeErrorCode={() => null}

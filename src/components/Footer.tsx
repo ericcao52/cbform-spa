@@ -1,4 +1,4 @@
-import { Box, Button, Text } from "@cauri/ui";
+import { Box, Button, Link as CauriLink, Text } from "@cauri/ui";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { FC, useState } from "react";
@@ -46,7 +46,7 @@ export const Footer: FC = () => {
           💡 Les participations effectuées avec le bouton « Payer avec Lydia »
           sont sans commissions pour l&apos;organisateur. 2,5% pour le bouton «
           Payer par carte »
-          <Link
+          <CauriLink
             fontSize={18}
             fontWeight={300}
             ml={2}
@@ -55,7 +55,7 @@ export const Footer: FC = () => {
             _hover={{ color: "unset" }}
           >
             (cagnotte la moins chère de France)
-          </Link>
+          </CauriLink>
         </Text>
         <Button
           fontFamily={
